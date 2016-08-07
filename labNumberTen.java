@@ -47,6 +47,14 @@ public class labNumberTen {
 				}
 
 			}
+			
+			if (!movieChoice.equalsIgnoreCase("horror") && !movieChoice.equalsIgnoreCase("animated")
+					&& !movieChoice.equalsIgnoreCase("comedy")
+                    && !movieChoice.equalsIgnoreCase("scifi")) {
+                System.out.println("This is not a valid category, please select horror, comedy, scifi");
+            }
+			
+			
 			System.out.println("Would you like to continue? (yes or no)");
 
 			choice = scan1.nextLine();
