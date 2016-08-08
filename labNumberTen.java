@@ -5,7 +5,6 @@ package Week3Day4;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class labNumberTen {
 
 	public static void main(String[] args) {
@@ -22,58 +21,68 @@ public class labNumberTen {
 					.println("There are four categories: animated, drama, horror, and scifi");
 			System.out.println("What category are you interested in?");
 			System.out.println();
-			
-			if(choice.equalsIgnoreCase("yes")){
-			
-			movieChoice = scan1.nextLine();
 
-			ArrayList<movies> list = new ArrayList();
+			if (choice.equalsIgnoreCase("yes")) {
 
-			list.add(new movies("Twilight", "scifi"));
-			list.add(new movies("Tweek", "scifi"));
-			list.add(new movies("Star Trak", "scifi"));
-			list.add(new movies("The Notebook", "drama"));
-			list.add(new movies("Titanic", "drama"));
-			list.add(new movies("Scream", "horror"));
-			list.add(new movies("Friday 13", "horror"));
-			list.add(new movies("Tangled", "animated"));
-			list.add(new movies("Frozen", "animated"));
-			list.add(new movies("Lion King", "animated"));
+				movieChoice = scan1.nextLine();
 
-			for (int i = 0; i < list.size(); i++) {
-				if (movieChoice.equalsIgnoreCase(list.get(i).getMovieGenre())) {
-					System.out.println(list.get(i).getMovieTitle(null));
+				ArrayList<movies> list = new ArrayList();
+
+				list.add(new movies("Twilight", "scifi"));
+				list.add(new movies("Tweek", "scifi"));
+				list.add(new movies("Star Trak", "scifi"));
+				list.add(new movies("The Notebook", "drama"));
+				list.add(new movies("Titanic", "drama"));
+				list.add(new movies("Scream", "horror"));
+				list.add(new movies("Friday 13", "horror"));
+				list.add(new movies("Tangled", "animated"));
+				list.add(new movies("Frozen", "animated"));
+				list.add(new movies("Lion King", "animated"));
+
+				for (int i = 0; i < list.size(); i++) {
+					if (movieChoice.equalsIgnoreCase(list.get(i)
+							.getMovieGenre())) {
+						// this is the most important line of the whole lab
+
+						System.out.println(list.get(i).getMovieTitle(null));
+
+					}
 
 				}
+				// this can be a new method
+				if (!movieChoice.equalsIgnoreCase("horror")
+						&& !movieChoice.equalsIgnoreCase("animated")
+						&& !movieChoice.equalsIgnoreCase("comedy")
+						&& !movieChoice.equalsIgnoreCase("scifi")) {
+					System.out
+							.println("This is not a valid category, please select horror, comedy, scifi");
+				}
+				// end of new method
+				// thought : instead of having each genre then you could put it
+				// in a for loop
+				// and you would need to save your genre in a different array (a
+				// new array)
 
-			}
-			
-			if (!movieChoice.equalsIgnoreCase("horror") && !movieChoice.equalsIgnoreCase("animated")
-					&& !movieChoice.equalsIgnoreCase("comedy")
-                    && !movieChoice.equalsIgnoreCase("scifi")) {
-                System.out.println("This is not a valid category, please select horror, comedy, scifi");
-            }
-			
-			
-			System.out.println("Would you like to continue? (yes or no)");
+				System.out.println("Would you like to continue? (yes or no)");
 
-			choice = scan1.nextLine();
-			//
+				choice = scan1.nextLine();
+				//
 			}
-			
-			else if(choice.equalsIgnoreCase("no")){
+
+			else if (choice.equalsIgnoreCase("no")) {
 				System.out.println("Goodbye)");
-				
+
 			}
-			
-			else{System.out.println("Invalid Entry. Would you like to continue? (yes or no");
-				
-				
-			}	continue;
-				
-				
+
+			else {
+				System.out
+						.println("Invalid Entry. Would you like to continue? (yes or no");
+
+			}
+			continue;
+
 		} // end of while loop
-		
+			// THIS NEEDS VALIDATION TOO
 		System.out.println("Goodbye");
 
 	} // end of main
